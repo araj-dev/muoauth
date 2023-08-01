@@ -5,8 +5,10 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"github.com/araj-dev/muoauth/crypto"
 	"golang.org/x/oauth2"
 	"log"
+	"os"
 	"time"
 )
 
@@ -31,8 +33,9 @@ type TokenStore struct {
 func NewTokenStore(config *oauth2.Config, db *sql.DB) *TokenStore {
 	cache := NewMapTokenStore()
 
+	cs := crypto.NewCryptoService(os.Getenv("APP_ENCRYPTION_KEY"))
 	// TODO: crypto service flag
-	p := &SQL{db: db, cs: nil}
+	p := &SQL{db: db, cs: cs}
 
 	return &TokenStore{
 		config:     config,

@@ -139,3 +139,10 @@ c := zoom.NewClient(s)
 res := c.Me("token-id")
 ```
 
+## TODO:
+[] Add more test
+[] Add more API for Zoom
+[] Add more example
+[] Add MySQL table definition for persistent store
+[] Add more persistent store implementation (e.g: Redis, Postgres,...)
+[] Improve Store Interface (around Crypto)
