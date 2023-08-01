@@ -146,3 +146,4 @@ res := c.Me("token-id")
 [] Add MySQL table definition for persistent store
 [] Add more persistent store implementation (e.g: Redis, Postgres,...)
 [] Improve Store Interface (around Crypto)
+[] Improve golang map race condition.
